@@ -11,7 +11,7 @@ class MensajeController extends Controller
     // Muestra el formulario
     public function create()
     {
-        $bienvenida = "Bienvenido al formulario de mensajes";
+        $bienvenida = "Bienvenido al formulario de mensajes, aqui podra encontrar los mensajes que recibimos diariamente...claro si dispone de pase de asministracion";
 
         // Retornamos la vista del formulario
         return view('mensaje.create', compact('bienvenida'));
@@ -37,7 +37,7 @@ class MensajeController extends Controller
 
         // Redirigimos de vuelta al formulario con un mensaje de éxito. Es un helper de Laravel que crea una respuesta de redirección. Es un helper de Laravel que crea una respuesta de redirección.
         // with('status', '...') añade un dato temporal a la sesión que estará disponible solo en la siguiente solicitud. Este dato se conoce como mensaje flash.
-        return redirect()->route('mensaje.create')->with('status', 'Mensaje guardado correctamente.');
+        return redirect()->route('mensaje.create')->with('estado', 'Mensaje guardado correctamente.');
     }
 
     public function index()
